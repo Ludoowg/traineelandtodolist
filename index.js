@@ -6,7 +6,13 @@ const path = require('path');
 require('dotenv').config();
 
 const app = express()
-app.use(cors())
+app.use(cors({
+    origin: [
+      'http://localhost:3000', // Pour le développement local
+      'https://traineegerantodo-aad783d61642.herokuapp.com' // URL de production
+    ]
+  }));
+  
 app.use(express.json())
 
 // Servir les fichiers statiques de React depuis le dossier build 
