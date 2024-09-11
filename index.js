@@ -7,10 +7,7 @@ require('dotenv').config();
 
 const app = express()
 app.use(cors({
-    origin: [
-      'http://localhost:3000', // Pour le développement local
-      'https://traineegerantodo-aad783d61642.herokuapp.com' // URL de production
-    ]
+    origin: '*'
   }));
   
 app.use(express.json())
