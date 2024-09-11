@@ -6,8 +6,11 @@ const path = require('path');
 require('dotenv').config();
 
 const app = express()
+
 app.use(cors({
-    origin: '*'
+    origin: '*', // Permet toutes les origines
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    allowedHeaders: ['Content-Type']
   }));
   
 app.use(express.json())
